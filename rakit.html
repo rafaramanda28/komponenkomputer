@@ -1,0 +1,16 @@
+<!doctype html><html lang="id"><head><title>Rakit PC: Anatomi PC</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head><body>
+<header><div class="wrap"><a class="logo" href="index.html">Anatomi PC</a><nav><a href="index.html">Beranda</a><a href="komponen.html">Komponen</a><a href="rakit.html">Rakit PC</a></nav></div></header>
+<main class="wrap">
+<h2 style="margin-top:2.5rem">Rakit PC</h2>
+<p class="lead">Seret komponen ke slot yang sesuai, atau klik komponen lalu klik slotnya. Klik slot yang terisi untuk melepasnya. Setelah lengkap, cek apakah rakitannya bisa menyala.</p>
+<div class="lab">
+<div id="tray" aria-label="Daftar komponen"></div>
+<div>
+<div class="board" id="board"></div>
+<p><button class="btn" id="cek">Cek rakitan</button> <button class="btn alt" id="reset">Kosongkan</button></p>
+<ul id="hasil" aria-live="polite"></ul>
+<p class="note">Estimasi beban adalah daya CPU + GPU + sekitar 100 W untuk komponen lain. PSU disarankan punya cadangan 30%.</p>
+</div></div>
+</main>
+<footer><div class="wrap">Tugas mata kuliah Informatika. Nama: [isi nama] / NIM: [isi NIM]</div></footer>
+<script src="script.js"></script><script src="rakit.js"></script></body></html>

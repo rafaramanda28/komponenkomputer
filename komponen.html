@@ -1,0 +1,70 @@
+<!doctype html><html lang="id"><head><title>Komponen: Anatomi PC</title><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head><body>
+<header><div class="wrap"><a class="logo" href="index.html">Anatomi PC</a><nav><a href="index.html">Beranda</a><a href="komponen.html">Komponen</a><a href="rakit.html">Rakit PC</a></nav></div></header>
+<main class="wrap split">
+<div class="tabs" role="tablist" aria-label="Pilih komponen">
+<button data-t="cpu">CPU</button><button data-t="ram">RAM</button><button data-t="mobo">Motherboard</button><button data-t="storage">Storage</button><button data-t="gpu">GPU</button><button data-t="psu">PSU</button>
+</div>
+<div>
+
+<section class="panel" id="cpu"><h2>CPU</h2>
+<h3>Fungsi</h3><p>Central Processing Unit menjalankan instruksi program dan mengatur kerja komponen lain.</p>
+<h3>Cara kerja</h3><p>CPU mengulang siklus fetch, decode, execute: mengambil instruksi dari memori, menerjemahkannya, lalu mengeksekusinya di ALU. Data yang sering dipakai disimpan di cache L1 sampai L3 agar CPU tidak menunggu RAM yang lebih lambat. Satu core adalah satu unit eksekusi; thread adalah alur instruksi yang bisa dijalankan sebuah core (SMT atau Hyper-Threading memungkinkan dua).</p>
+<h3>Spesifikasi penting</h3>
+<table><tr><th>Core dan thread</th><td>Jumlah pekerjaan yang bisa diproses bersamaan.</td></tr>
+<tr><th>Clock (GHz)</th><td>Siklus per detik. Bukan satu-satunya penentu performa, arsitektur ikut menentukan.</td></tr>
+<tr><th>Cache (MB)</th><td>Memori super cepat di dalam CPU. Lebih besar umumnya mengurangi waktu tunggu.</td></tr>
+<tr><th>Socket</th><td>Bentuk dudukan fisik, misalnya AM5 atau LGA1700. Harus sama dengan motherboard.</td></tr>
+<tr><th>TDP (W)</th><td>Acuan daya dan panas untuk memilih pendingin dan PSU.</td></tr></table></section>
+
+<section class="panel" id="ram"><h2>RAM</h2>
+<h3>Fungsi</h3><p>Random Access Memory menyimpan data dan program yang sedang berjalan. Isinya hilang saat listrik mati (volatile).</p>
+<h3>Cara kerja</h3><p>Tiap bit disimpan sebagai muatan di kapasitor kecil (DRAM), dan muatan itu bocor sehingga harus di-refresh terus-menerus. CPU mengakses RAM lewat memory controller. Dua modul pada dual channel membuat jalur data selebar dua kali lipat.</p>
+<h3>Spesifikasi penting</h3>
+<table><tr><th>Kapasitas (GB)</th><td>Berapa banyak program dan data bisa dibuka sekaligus.</td></tr>
+<tr><th>Tipe</th><td>DDR4 atau DDR5. Tidak bisa ditukar karena posisi takik slotnya berbeda.</td></tr>
+<tr><th>Kecepatan (MT/s)</th><td>Jumlah transfer data per detik.</td></tr>
+<tr><th>Latency (CL)</th><td>Jumlah siklus tunggu sebelum data pertama keluar. Lebih kecil lebih responsif.</td></tr>
+<tr><th>Channel</th><td>Single atau dual channel. Dual menggandakan lebar jalur.</td></tr></table></section>
+
+<section class="panel" id="mobo"><h2>Motherboard</h2>
+<h3>Fungsi</h3><p>Papan sirkuit utama tempat semua komponen dipasang dan saling terhubung.</p>
+<h3>Cara kerja</h3><p>Chipset mengatur lalu lintas data lewat jalur PCIe (GPU, SSD NVMe), slot DIMM (RAM), dan port SATA. Daya dari PSU masuk lewat konektor 24-pin dan konektor CPU. Saat dinyalakan, firmware BIOS/UEFI menjalankan POST untuk memeriksa perangkat, lalu menyerahkan kendali ke sistem operasi.</p>
+<h3>Spesifikasi penting</h3>
+<table><tr><th>Socket</th><td>Menentukan CPU yang bisa dipasang.</td></tr>
+<tr><th>Chipset</th><td>Menentukan fitur dan jumlah jalur, misalnya B650 atau B660.</td></tr>
+<tr><th>Form factor</th><td>ATX, micro-ATX, atau mini-ITX. Harus muat di casing.</td></tr>
+<tr><th>Slot RAM</th><td>Jumlah slot dan tipe memori yang didukung (DDR4 atau DDR5).</td></tr>
+<tr><th>Slot M.2 dan PCIe</th><td>Jumlah dan versi slot untuk SSD NVMe dan GPU.</td></tr></table></section>
+
+<section class="panel" id="storage"><h2>Storage</h2>
+<h3>Fungsi</h3><p>Menyimpan sistem operasi, program, dan file secara permanen, bahkan saat komputer mati.</p>
+<h3>Cara kerja</h3><p>HDD menyimpan data pada piringan magnetik yang berputar dan dibaca oleh head mekanis, sehingga akses acaknya lambat. SSD memakai sel flash NAND tanpa bagian bergerak, diatur oleh controller. SSD NVMe terhubung langsung ke jalur PCIe sehingga jauh lebih cepat daripada SSD SATA.</p>
+<h3>Spesifikasi penting</h3>
+<table><tr><th>Kapasitas</th><td>Total ruang simpan (GB atau TB).</td></tr>
+<tr><th>Antarmuka</th><td>SATA atau NVMe (PCIe). Menentukan batas kecepatan.</td></tr>
+<tr><th>Kecepatan baca/tulis</th><td>Dalam MB/s. Sekuensial untuk file besar, acak untuk banyak file kecil.</td></tr>
+<tr><th>TBW (SSD)</th><td>Total data yang boleh ditulis sebelum sel aus.</td></tr>
+<tr><th>RPM (HDD)</th><td>Kecepatan putar piringan, umumnya 5400 atau 7200.</td></tr></table></section>
+
+<section class="panel" id="gpu"><h2>GPU</h2>
+<h3>Fungsi</h3><p>Graphics Processing Unit menghasilkan gambar untuk layar dan mempercepat komputasi paralel seperti render video dan AI.</p>
+<h3>Cara kerja</h3><p>GPU memiliki ribuan core sederhana yang menjalankan operasi sama pada banyak data sekaligus, cocok untuk menghitung jutaan piksel. Datanya disimpan di VRAM milik GPU sendiri. Hasil gambar dikirim ke monitor lewat HDMI atau DisplayPort.</p>
+<h3>Spesifikasi penting</h3>
+<table><tr><th>VRAM (GB)</th><td>Memori khusus GPU. Menentukan resolusi dan ukuran tekstur yang muat.</td></tr>
+<tr><th>Jumlah core</th><td>CUDA core (NVIDIA) atau stream processor (AMD).</td></tr>
+<tr><th>Daya (TDP/TBP)</th><td>Konsumsi daya, menentukan kapasitas PSU dan konektor yang diperlukan.</td></tr>
+<tr><th>Slot</th><td>Umumnya PCIe x16 pada motherboard.</td></tr>
+<tr><th>Port output</th><td>HDMI dan DisplayPort. Pastikan cocok dengan monitor.</td></tr></table></section>
+
+<section class="panel" id="psu"><h2>PSU</h2>
+<h3>Fungsi</h3><p>Power Supply Unit mengubah listrik AC dari stopkontak menjadi arus DC bertegangan rendah untuk semua komponen.</p>
+<h3>Cara kerja</h3><p>PSU modern berjenis switching: menyearahkan AC, lalu memotongnya pada frekuensi tinggi lewat transformator kecil, dan meregulasi hasilnya menjadi 12 V, 5 V, dan 3,3 V. Rail 12 V membawa beban terbesar, terutama untuk CPU dan GPU.</p>
+<h3>Spesifikasi penting</h3>
+<table><tr><th>Wattage</th><td>Daya maksimum. Disarankan ada cadangan sekitar 30% di atas estimasi beban.</td></tr>
+<tr><th>Sertifikasi 80 PLUS</th><td>Efisiensi minimum, dari Bronze sampai Titanium. Makin tinggi, makin sedikit daya terbuang jadi panas.</td></tr>
+<tr><th>Konektor</th><td>24-pin motherboard, EPS untuk CPU, PCIe untuk GPU, SATA.</td></tr>
+<tr><th>Modular</th><td>Kabel bisa dilepas sehingga casing lebih rapi.</td></tr></table></section>
+
+</div></main>
+<footer><div class="wrap">Tugas mata kuliah Informatika. Nama: [isi nama] / NIM: [isi NIM]</div></footer>
+<script src="script.js"></script></body></html>
